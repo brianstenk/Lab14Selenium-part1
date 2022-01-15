@@ -17,7 +17,7 @@ public class CalculatorTest {
 	@Before
 	public void createWebDriver() {
 		// set path to chromedriver.exe
-		System.setProperty("webdriver.chrome.driver", "D:\\DE Courses\\WAA\\week14\\chromedriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\DE Courses\\WAA\\week14\\chromedriver.exe");
 		// create chrome instance
 		driver = new ChromeDriver();
 	}
