@@ -19,6 +19,8 @@ public class CalculatorPage {
 	private WebElement threeButton;
 	@FindBy(name = "four")
 	private WebElement fourButton;
+	@FindBy(name = "six")
+	private WebElement sixButton;
 	@FindBy(name = "cancel")
 	private WebElement clearButton;
 	@FindBy(name = "add")
@@ -79,4 +81,8 @@ public class CalculatorPage {
 		return resultField.getAttribute("value");
 	}
 
+	public String clickSix() {
+		sixButton.click();
+		return resultField.getAttribute("value");
+	}
 }

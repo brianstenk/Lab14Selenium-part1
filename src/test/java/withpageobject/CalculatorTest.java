@@ -16,7 +16,7 @@ public class CalculatorTest {
 	@Before
 	public void createWebDriver() {
 		// set path to chromedriver.exe
-		System.setProperty("webdriver.chrome.driver", "C:\\waa\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\DE Courses\\WAA\\week14\\chromedriver.exe");
 	    page = PageFactory.initElements(new ChromeDriver(), CalculatorPage.class);
 	    page.open("http://www.rekenmachine-calculator.nl/");
 	  }
@@ -37,4 +37,16 @@ public class CalculatorTest {
 	    page.clickClear();
 	  }
 
+	@Test
+	public void twoAndSix() {
+		page.clickTwo();
+		page.clickAdd();
+		page.clickSix();
+		assertThat(page.getResult(),  is("2+6"));
+		page.clickEqual();
+		assertThat(page.getResult(),  is("8"));
+		page.clickClear();
 	}
+
+
+}
