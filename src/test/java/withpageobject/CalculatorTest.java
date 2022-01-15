@@ -37,4 +37,16 @@ public class CalculatorTest {
 	    page.clickClear();
 	  }
 
+	@Test
+	public void twoAndSix() {
+		page.clickTwo();
+		page.clickAdd();
+		page.clickSix();
+		assertThat(page.getResult(),  is("2+6"));
+		page.clickEqual();
+		assertThat(page.getResult(),  is("8"));
+		page.clickClear();
 	}
+
+
+}
