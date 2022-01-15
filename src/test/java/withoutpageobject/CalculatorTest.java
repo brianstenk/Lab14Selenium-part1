@@ -42,4 +42,20 @@ public class CalculatorTest {
 		button.click();
 		assertThat(driver.findElement(By.name("txt")).getAttribute("value"), is("5"));
 	}
+	@Test
+	public void twoAndSix() {
+		//U can also use driver.get("website-undertest")
+		driver.navigate().to("http://www.rekenmachine-calculator.nl/");
+
+		WebElement button = driver.findElement(By.name("two"));
+		button.click();
+		button = driver.findElement(By.name("add"));
+		button.click();
+		button = driver.findElement(By.name("six"));
+		button.click();
+		assertThat(driver.findElement(By.name("txt")).getAttribute("value"), is("2+6"));
+		button = driver.findElement(By.name("equal"));
+		button.click();
+		assertThat(driver.findElement(By.name("txt")).getAttribute("value"), is("8"));
+	}
 }
